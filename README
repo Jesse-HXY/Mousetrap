@@ -1,10 +1,12 @@
 Mousetrap v1.0 README 
 
 Mousetrap v1.0
-a small utility to trap the mouse inside the window it's currently hovering over
+a small utility to trap the mouse inside the window it's currently hovering 
+over
 
-I wrote this because I like to play games in a window and some games when run with
-WINE don't properly lock the mouse to the window, like Starcraft II for instance.
+I wrote this because I like to play games in a window and some games when run 
+with WINE don't properly lock the mouse to the window, like Starcraft II for 
+instance.
 
 Depends on libX11, notify-send and rw access to /tmp
 
@@ -18,7 +20,7 @@ Usage:
 	put the mousetrap binary somewhere in your path
 	setup a hotkey to run the mousetrap bin (I use xfce keyboard settings)
 	running it once locks the mouse to whatever window is under the mouse
-	running it a second time kills the previous process and unlocks the mouse
+	running it a second time kills the previous one and unlocks the mouse
 
 Options:
 	mousetrap -h -n -t x -b x -l x -r x

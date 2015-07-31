@@ -1,10 +1,12 @@
 /*
 
 Mousetrap v1.0
-a small utility to trap the mouse inside the window it's currently hovering over
+a small utility to trap the mouse inside the window it's currently hovering 
+over
 
-I wrote this because I like to play games in a window and some games when run with
-WINE don't properly lock the mouse to the window.
+I wrote this because I like to play games in a window and some games when run 
+with WINE don't properly lock the mouse to the window, like Starcraft II for 
+instance.
 
 Depends on libX11, notify-send and rw access to /tmp
 
@@ -14,30 +16,30 @@ Get Started:
 	cd Mousetrap
 	make
 
-Usage:		
+Usage:
 	put the mousetrap binary somewhere in your path
 	setup a hotkey to run the mousetrap bin (I use xfce keyboard settings)
 	running it once locks the mouse to whatever window is under the mouse
-	running it a second time kills the previous process and unlocks the mouse
+	running it a second time kills the previous one and unlocks the mouse
 
 Options:
 	mousetrap -h -n -t x -b x -l x -r x
-	 	[-h] display this message 
-		[-n] turn off notify 
-		[-t offset_top=34] set offset from top of window
-		[-b offset_bot=12] set offset from bottom of window
-		[-l offset_left=12] set offset from left side of window
-		[-r offset_right=12] set offset from right side of window
+ 	[-h] display this message 
+	[-n] turn off notify 
+	[-t offset_top=34] set offset from top of window
+	[-b offset_bot=12] set offset from bottom of window
+	[-l offset_left=12] set offset from left side of window
+	[-r offset_right=12] set offset from right side of window
 
 tested on Xubuntu 14.04
 
 Known issues:
-	-If you move the window, the locked area does not move with the window
-	-You can't specify negative values for the border offsets
-	-Makes Xorg use excessive cpu from XQueryPointer() calls
+-If you move the window, the locked area does not move with the window
+-You can't specify negative values for the border offsets
+-Makes Xorg use excessive cpu from XQueryPointer() calls
 
 v1.0 - 07/31/2015 - greg@invisiblespaceship.com
-	Initial release.
+Initial release.
 	
 */
 
