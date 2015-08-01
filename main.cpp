@@ -11,7 +11,7 @@ instance.
 Depends on libX11, notify-send and rw access to /tmp
 
 Get Started:
-	apt-get install libx11-dev
+	sudo apt-get install libx11-dev
 	git clone https://github.com/gholken/Mousetrap.git
 	cd Mousetrap
 	make
@@ -99,7 +99,7 @@ int main( int argc, char* argv[] ) {
 	int offset_right = 12;
 	int offset_left = 12;
 
-	while( (opt = getopt( argc, argv, "nt:b:l:r:h")) != -1 ) {
+	while( (opt = getopt( argc, argv, "nt:b:l:r:hv")) != -1 ) {
 		switch(opt) {
 			case 'n':
 				usenotify = false;
@@ -115,6 +115,9 @@ int main( int argc, char* argv[] ) {
 				break;
 			case 'r':
 				offset_right = atoi(optarg);
+				break;
+			case 'v':
+				printf("Mousetrap v1.0\nCopyright (C) 2015 Greg Holkenbrink\nMIT License see README for details\n");
 				break;
 			case 'h':
 			default:
