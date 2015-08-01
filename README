@@ -30,6 +30,7 @@ Options:
 	[-b offset_bot=12] set offset from bottom of window
 	[-l offset_left=12] set offset from left side of window
 	[-r offset_right=12] set offset from right side of window
+	[-v] display version info
 
 tested on Xubuntu 14.04
 

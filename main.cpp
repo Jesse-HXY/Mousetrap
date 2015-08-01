@@ -30,6 +30,7 @@ Options:
 	[-b offset_bot=12] set offset from bottom of window
 	[-l offset_left=12] set offset from left side of window
 	[-r offset_right=12] set offset from right side of window
+	[-v] display version info
 
 tested on Xubuntu 14.04
 
@@ -121,7 +122,7 @@ int main( int argc, char* argv[] ) {
 				break;
 			case 'h':
 			default:
-				fprintf(stderr, "Usage: %s [-h] display this message [-n] turn off notify [-t offset_top=34] [-b offset_bot=12] [-l offset_left=12] [-r offset_right=12]\n", argv[0]);
+				fprintf(stderr, "Usage: %s [-h] display this message [-n] turn off notify [-t offset_top=34] [-b offset_bot=12] [-l offset_left=12] [-r offset_right=12] [-v] display version info\n", argv[0]);
 				exit(EXIT_FAILURE);
 		}
 	}
