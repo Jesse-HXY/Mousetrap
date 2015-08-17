@@ -37,7 +37,9 @@ tested on Xubuntu 14.04
 Known issues:
 -If you move the window, the locked area does not move with the window
 -You can't specify negative values for the border offsets
--Makes Xorg use excessive cpu from XQueryPointer() calls
 
-v1.0 - 07/31/2015 - greg@invisiblespaceship.com
+v1.0	2015-07-31	greg@invisiblespaceship.com
 Initial release.
+
+v1.01	2015-08-17	greg@invisiblespaceship.com
+Fixed some excessive cpu usage
