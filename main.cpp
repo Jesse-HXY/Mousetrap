@@ -159,31 +159,26 @@ int main( int argc, char* argv[] ) {
 	int min_x = info_data.x;
 	int min_y = info_data.y;
 
+	current_window = GetMouseWindow(display);
+
+	Window unusedwin;
+	Window win;
+	int unuseddata;
+	int cur_x;
+	int cur_y;
+	unsigned int mask;
+
 	do {
-		current_window = GetMouseWindow(display);
-
-		Window unusedwin;
-		Window win;
-		int unuseddata;
-		int cur_x;
-		int cur_y;
-		unsigned int mask;
-
-		//NOTE: this could be refactored so that XQueryPointer is called once
-		// and then the mouse position could be updated from reading /dev/input
-		// because right now this uses lots of CPU
-		// see: http://stackoverflow.com/questions/11519759/how-to-read-low-level-mouse-click-position-in-linux
     	XQueryPointer(display, current_window, &unusedwin, &win, &cur_x, &cur_y, &unuseddata, &unuseddata, &mask);
 
 		bool warp = false;
 
 		if( cur_x > max_x-offset_right ) { warp = true; cur_x = max_x-offset_right; }
-		if( cur_y > max_y-offset_bot ) { warp = true; cur_y = max_y-offset_bot; }
-		if( cur_x < min_x+offset_left ) { warp = true; cur_x = min_x+offset_left; }
-		if( cur_y < min_y+offset_top ) { warp = true; cur_y = min_y+offset_top; }
+		if( cur_y > max_y-offset_bot )   { warp = true; cur_y = max_y-offset_bot; }
+		if( cur_x < min_x+offset_left )  { warp = true; cur_x = min_x+offset_left; }
+		if( cur_y < min_y+offset_top )   { warp = true; cur_y = min_y+offset_top; }
 		
 		if( warp ) { XWarpPointer( display, None, root_window, 0, 0, 0, 0, cur_x, cur_y ); }
-		//XFlush(display);
 
 		usleep(300);
 	} while(true);
